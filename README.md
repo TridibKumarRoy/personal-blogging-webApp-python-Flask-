@@ -42,7 +42,7 @@ The database configuration is specified in the `config.json` file. Depending on 
     "local_server": {
       "val": true
     },
-    "DBURI": "mysql://user:password@localhost/db_name",  // or use another local database URI
+    "DBURI": "mysql://user:password@localhost/db_name", 
     "ProdDBURI": "mysql://user:password@localhost/db_name",
     ...
   }
