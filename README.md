@@ -15,8 +15,6 @@ A simple blog application built with Flask, SQLAlchemy, and Bootstrap. This appl
 - Python 3.x
 - Flask
 - Flask-SQLAlchemy
-- Bootstrap (for frontend)
-- Other dependencies listed in `requirements.txt`
 
 ## Installation
 
