@@ -6,12 +6,13 @@ create table posts(
 	sno int primary key auto_increment,
     title text,
     content text,
-    date datetime default current_timestamp
+    date datetime default current_timestamp,
+    slug text,
+    img_path varchar(100)
 );
 
 drop table posts;
 select * from posts;
-alter table posts add slug text;
 
 create table contacts(
 	sno int primary key auto_increment,
@@ -23,6 +24,3 @@ create table contacts(
 );
 drop table contacts;
 select * from contacts;
-
-insert into contacts (sno,name,email,phone_num,message) values(1,"tridib","t@gmail.com",123456789,"hello");
-insert into contacts (name,email,phone_num,message) values("tridib2","t2@gmail.com",123456780,"hello world");

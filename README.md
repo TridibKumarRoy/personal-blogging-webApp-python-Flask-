@@ -15,6 +15,7 @@ A simple blog application built with Flask, SQLAlchemy, and Bootstrap. This appl
 - Python 3.x
 - Flask
 - Flask-SQLAlchemy
+- MySQL database
 
 ## Installation
 
@@ -22,3 +23,73 @@ A simple blog application built with Flask, SQLAlchemy, and Bootstrap. This appl
 
    ```sh
    git clone https://github.com/TridibKumarRoy/personal-blogging-webApp-python-Flask-.git
+
+
+## Database Setup
+
+This project uses a relational database to store data for contacts and posts. The database schema is managed using SQLAlchemy.
+
+### Database Configuration
+
+The database configuration is specified in the `config.json` file. Depending on the environment (local or production), different database URIs can be used.
+
+
+**Example `config.json`:**
+
+```json
+{
+  "params": {
+    "local_server": {
+      "val": true
+    },
+    "DBURI": "mysql://user:password@localhost/db_name",  // or use another local database URI
+    "ProdDBURI": "mysql://user:password@localhost/db_name",
+    ...
+  }
+}
+
+
+### `aql_queries.sql`
+
+The `queries.sql` file contains SQL commands to set up and manage the database schema for the application. It includes commands to create, drop, and query tables for storing blog posts and contact information.
+
+**Contents of `queries.sql`:**
+
+```sql
+-- Create the database
+CREATE DATABASE blog1;
+
+-- Use the created database
+USE blog1;
+
+-- Create the 'posts' table
+CREATE TABLE posts (
+    sno INT PRIMARY KEY AUTO_INCREMENT,
+    title TEXT,
+    content TEXT,
+    date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    slug TEXT,
+    img_path VARCHAR(100)
+);
+
+-- Drop the 'posts' table (for testing or reinitialization)
+DROP TABLE posts;
+
+-- Query to select all entries from 'posts'
+SELECT * FROM posts;
+
+-- Create the 'contacts' table
+CREATE TABLE contacts (
+    sno INT PRIMARY KEY AUTO_INCREMENT,
+    name TEXT(50),
+    email VARCHAR(50),
+    phone_num VARCHAR(13),
+    message TEXT(500),
+    date DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Drop the 'contacts' table (for testing or reinitialization)
+DROP TABLE contacts;
+
+-- Query to select all entries from 'contacts'
+SELECT * FROM contacts;
