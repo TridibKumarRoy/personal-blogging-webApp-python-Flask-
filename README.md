@@ -44,7 +44,6 @@ The database configuration is specified in the `config.json` file. Depending on 
     },
     "DBURI": "mysql://user:password@localhost/db_name", 
     "ProdDBURI": "mysql://user:password@localhost/db_name",
-    ...
   }
 }
 
