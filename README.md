@@ -29,25 +29,6 @@ A simple blog application built with Flask, SQLAlchemy, and Bootstrap. This appl
 
 This project uses a relational database to store data for contacts and posts. The database schema is managed using SQLAlchemy.
 
-### Database Configuration
-
-The database configuration is specified in the `config.json` file. Depending on the environment (local or production), different database URIs can be used.
-
-
-**Example `config.json`:**
-
-```json
-{
-  "params": {
-    "local_server": {
-      "val": true
-    },
-    "DBURI": "mysql://user:password@localhost/db_name", 
-    "ProdDBURI": "mysql://user:password@localhost/db_name",
-  }
-}
-
-
 ### `aql_queries.sql`
 
 The `queries.sql` file contains SQL commands to set up and manage the database schema for the application. It includes commands to create, drop, and query tables for storing blog posts and contact information.
@@ -92,3 +73,22 @@ DROP TABLE contacts;
 
 -- Query to select all entries from 'contacts'
 SELECT * FROM contacts;
+
+
+### Database Configuration
+
+The database configuration is specified in the `config.json` file. Depending on the environment (local or production), different database URIs can be used.
+
+
+**Example `config.json`:**
+
+```json
+{
+  "params": {
+    "local_server": {
+      "val": true
+    },
+    "DBURI": "mysql://user:password@localhost/db_name", 
+    "ProdDBURI": "mysql://user:password@localhost/db_name",
+  }
+}
