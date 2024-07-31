@@ -1,0 +1,76 @@
+{% extends "layout.html" %} {% block body %}
+<style>
+  .divider:after,
+  .divider:before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #1900ff;
+  }
+  .h-custom {
+    height: calc(100% - 73px);
+    background-color: rgb(194, 192, 212);
+  }
+  @media (max-width: 450px) {
+    .h-custom {
+      height: 100%;
+    }
+  }
+</style>
+<section class="vh-100" >
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img
+          src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+          class="img-fluid"
+          alt="Sample image"
+        />
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <form method="post">
+            <h1 style="margin-bottom:50px ;">Only for Admins</h1>
+          <!-- username -->
+          <div data-mdb-input-init class="form-outline mb-4">
+            <input
+              type="username"
+              id="form3Example3"
+              class="form-control form-control-lg"
+              placeholder="Enter admin username"
+              name="username"
+            />
+            <label class="form-label" for="form3Example3">username</label>
+          </div>
+
+          <!-- Password input -->
+          <div data-mdb-input-init class="form-outline mb-3">
+            <input
+              type="password"
+              id="form3Example4"
+              class="form-control form-control-lg"
+              placeholder="Enter admin password"
+              name="password"
+            />
+            <label class="form-label" for="form3Example4">Password</label>
+          </div>
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            
+            <button
+              class="btn btn-primary text-uppercase" id="submitButton" type="submit"
+            >
+              Login
+            </button>
+            <a
+              href="/"
+              type="button"
+              class="btn btn-primary text-uppercase"
+              >go to home</a
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

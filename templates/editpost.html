@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- nav class="navbar navbar-expand-lg navbar-light" id="mainNav -->
+<style>
+    body{
+        background-color: #97b0b75e;
+    }
+    form{
+        margin-top: 10vh;
+    }
+</style>
+<!-- edit post  -->
+       <form action="/post/edit/{{post.sno}}" method="post" class="form">
+      <div class="container mt-5">
+        <h1>edit post</h1>
+
+        <div data-mdb-input-init class="form-outline mb-4">
+          <label class="form-label" for="form3Example3">Sno</label>
+          <input
+            type="text"
+            id="form3Example3"
+            class="form-control form-control-lg "
+            placeholder="Enter title"
+            name="sno"
+            value="{{post.sno}}"
+            disabled
+          />
+        </div>
+
+        <div data-mdb-input-init class="form-outline mb-4">
+          <label class="form-label" for="form3Example3">Date</label>
+          <input
+            type="datetime"
+            id="form3Example3"
+            class="form-control form-control-lg "
+            placeholder="Enter title"
+            name="date"
+            value="{{post.date}}"
+            disabled
+          />
+        </div>
+
+        <div data-mdb-input-init class="form-outline mb-4">
+          <label class="form-label" for="form3Example3">Title</label>
+          <input
+            type="text"
+            id="form3Example3"
+            class="form-control form-control-lg"
+            placeholder="Enter title"
+            name="title"
+            value="{{post.title}}"
+          />
+        </div>
+
+        <div data-mdb-input-init class="form-outline mb-4">
+          <label class="form-label" for="form3Example3">content</label>
+          <p>&lt;br&gt; for line break, &nbsp; for space, &lt;a href="link/web address"&gt;link name&lt;/a&gt;</p>
+          <textarea
+            type="text"
+            id="form3Example3"
+            class="form-control form-control-lg"
+            placeholder="Enter content"
+            name="content"
+            rows="10"
+          >{{post.content}}</textarea>
+        </div>
+
+        <div data-mdb-input-init class="form-outline mb-4">
+          <label class="form-label" for="form3Example3">Slug</label>
+          <input
+            type="text"
+            id="form3Example3"
+            class="form-control form-control-lg"
+            placeholder="Enter Image Name"
+            name="slug"
+            value="{{post.slug}}"
+          />
+        </div>
+
+        <div data-mdb-input-init class="form-outline mb-4">
+          <label class="form-label" for="form3Example3">Image Name</label>
+          <input
+            type="text"
+            id="form3Example3"
+            class="form-control form-control-lg"
+            placeholder="Enter Image Name"
+            name="image"
+            value="{{post.img_path}}"
+          />
+        </div>
+        <div data-mdb-input-init class="form-outline mb-4">
+          <label class="form-label" for="form3Example3">Image</label>
+          {%set image =post.img_path %}
+                        <img src="{{url_for('static',filename=image)}}" alt="" width="50%">
+        </div>
+
+        <button
+          class="btn btn-primary text-uppercase"
+          id="submitButton"
+          type="submit"
+        >
+          Post
+        </button>
+      </div>
+      </form>
+      <!-- add new post ends  -->
+
+      {% endblock %}

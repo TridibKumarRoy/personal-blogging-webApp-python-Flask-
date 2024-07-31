@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Page Not Found</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body, html {
+      height: 100%;
+    }
+    .bg-light-gray {
+      background-color: #f8f9fa;
+    }
+    .error-container {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .error-code {
+      font-size: 6rem;
+      font-weight: 700;
+    }
+    .error-message {
+      font-size: 1.5rem;
+      font-weight: 300;
+    }
+  </style>
+</head>
+<body class="bg-light-gray">
+
+ 
+
+  <!-- Error Page Content -->
+  <div class="error-container">
+    <div class="text-center">
+      <div class="error-code">{{errcode}}</div>
+      <!-- <p class="error-message">Oops! The page you're looking for doesn't exist.</p> -->
+      <p class="error-message">{{msg}}</p>
+      <a href="/" class="btn btn-primary">Go Back Home</a>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

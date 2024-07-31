@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block body %}
+        <!-- Page Header-->
+         <!-- {%set image =post.img_path %} -->
+        <!-- <header class="masthead" style="background-image: url('{{url_for('static',filename=image)}}')"> -->
+        <header class="masthead" style="background-image: url('{{url_for('static',filename='assets/img/post-bg.jpg')}}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>{{post.title}}</h1>
+                            <!-- <h2 class="subheading">Problems look mighty small from 150 miles up</h2> -->
+                            <span class="meta">
+                                Posted by 
+                                <b><a href="https://github.com/TridibKumarRoy" target="_blank">Tridib Roy</a></b>
+                                on {{post.date}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class=" px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        {%set image =post.img_path %}
+                        <img src="{{url_for('static',filename=image)}}" alt="" width="100%">
+                        
+                    </div>
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p>
+                        
+                        {{post.content | safe}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </article>
+        
+
+{% endblock %}

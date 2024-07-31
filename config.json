@@ -1,0 +1,23 @@
+{
+  "params": {
+    "site_name": "Tridib's Tech Blogs",
+    "local_server": {
+      "val": "1",
+      "comment": "empty string value of val is false else true"
+    },
+    "port": 5000,
+    "DBURI": "mysql://root:tridib@localhost/blog1",
+    "ProdDBURI": "mysql://user:password@localhost/db_name",
+    "host": "0.0.0.0",
+    "MAIL_USERNAME": "Tridib Roy",
+    "e_mail": "",
+    "e_mail_passWord": "",
+    "fb_url": "https://tridibkumarroy.github.io/coursera_HTML_CSS_JS/module3-solution/",
+    "x_url": "https://x.com/?lang=en",
+    "gh_url": "https://github.com/",
+    "number_of_posts": 3,
+    "username": "tridib",
+    "password": "1234",
+    "upload_location": "./static"
+  }
+}
